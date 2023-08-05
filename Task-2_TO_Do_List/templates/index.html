@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TO-DO WebApp</title>
+{%endblock%}
+
+{%block body %}
+<div class="content">
+    
+    <center>
+        <h1>TO-DO WebApp</h1>
+
+    {% if tasks|length <1 %}
+    <h5>There is no tasks yet. Create your Tasks!</h5>
+    {% else %}
+
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Action</th>
+            <th>Done</th>
+        </tr>
+        {% for task in tasks%}
+        <tr>
+            <td>{{task.content }} </td>
+            <td>{{task.data_created.date() }}</td>
+            <td>
+                    <a href="/delete/{{task.id}}">Delete</a>   |  
+                    <a href="/update/{{task.id}}">Update</a>
+            </td>
+            <td>
+                <input type="checkbox" name="content" id="content">
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    <br>
+    <br>
+    {% endif %}
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Task">
+    </form>
+    </center>
+
+
+</div>
+
+
+{%endblock%}
