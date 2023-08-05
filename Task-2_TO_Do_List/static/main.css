@@ -1,0 +1,29 @@
+*{
+    background-color: cadetblue;
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
+    
+}
+table, th, td{
+    border: 1px solid brown;
+}
+
+table{
+    border-collapse: collapse;
+}
+th{
+    text-align: center;
+    padding: 30px 40px;
+    color: brown;
+    font-size: larger;
+}
+td{
+    text-align: center;
+    padding: 20px 20px;
+}
+
+a{
+    text-decoration: none;
+}
